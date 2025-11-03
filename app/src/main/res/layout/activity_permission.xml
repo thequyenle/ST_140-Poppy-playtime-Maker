@@ -28,8 +28,8 @@
     <!-- imgPermission -->
     <ImageView
         android:id="@+id/imgPermission"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="256dp"
+        android:layout_height="254dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:src="@drawable/img_permission"
@@ -40,15 +40,21 @@
     <!-- txtPermission -->
     <LinearLayout
         android:id="@+id/txtPermission"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgPermission">
+        android:layout_marginBottom="17dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/londrina_solid_regular"
+        app:layout_constraintEnd_toEndOf="@id/imgPermission"
+        app:layout_constraintStart_toStartOf="@id/imgPermission"
+        app:layout_constraintBottom_toBottomOf="@id/imgPermission">
 
         <TextView
             android:id="@+id/txtPer"
@@ -58,6 +64,21 @@
             android:textSize="14sp" />
     </LinearLayout>
 
+    <!-- tvContinue -->
+    <TextView
+        android:id="@+id/tvContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FF0000"
+        android:fontFamily="@font/londrina_solid_regular"
+        android:gravity="center"
+        android:textColor="@color/purple"
+        android:text="@string/continue_per"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
     <!-- scvButton -->
     <ScrollView
         android:layout_width="match_parent"
@@ -66,7 +87,7 @@
         android:layout_marginBottom="4dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@+id/tvContinue"
-        app:layout_constraintTop_toBottomOf="@id/txtPermission">
+        app:layout_constraintTop_toBottomOf="@id/imgPermission">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -77,19 +98,20 @@
             <!-- btnStorage-->
             <RelativeLayout
                 android:id="@+id/btnStorage"
-                android:background="@drawable/bg_100_stroke_white"
+                android:background="@drawable/bg_permission"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+                android:layout_height="56dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="16dp"
-                    android:fontFamily="@font/roboto_regular"
+                    android:fontFamily="@font/londrina_solid_regular"
                     android:gravity="start"
                     android:text="@string/storage"
-                    android:textColor="@color/white"
+                    android:textColor="@color/purple"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -107,8 +129,8 @@
             <RelativeLayout
                 android:id="@+id/btnNotification"
                 android:layout_width="match_parent"
-                android:background="@drawable/bg_100_stroke_white"
-                android:layout_height="wrap_content"
+                android:background="@drawable/bg_permission"
+                android:layout_height="56dp"
                 android:layout_marginTop="16dp">
 
                 <TextView
@@ -116,10 +138,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="16dp"
-                    android:fontFamily="@font/roboto_regular"
+                    android:fontFamily="@font/londrina_solid_regular"
                     android:gravity="start"
                     android:text="@string/notification"
-                    android:textColor="@color/white"
+                    android:textColor="@color/purple"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -137,18 +159,5 @@
 
     </ScrollView>
 
-    <!-- tvContinue -->
-    <TextView
-        android:id="@+id/tvContinue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginBottom="150dp"
-        android:fontFamily="@font/roboto_medium"
-        android:gravity="center"
-        android:text="@string/continue_per"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

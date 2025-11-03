@@ -18,6 +18,7 @@ import com.charactor.avatar.maker.pfp.activity_app.SettingsActivity
 import com.charactor.avatar.maker.pfp.activity_app.my_creation.MyCreationActivity
 import com.charactor.avatar.maker.pfp.activity_app.customize.CustomizeCharacterActivity
 import com.charactor.avatar.maker.pfp.choose_character.ChooseCharacterActivity
+import com.charactor.avatar.maker.pfp.core.extensions.gone
 import com.charactor.avatar.maker.pfp.core.extensions.setOnSingleClick
 import com.charactor.avatar.maker.pfp.core.extensions.strings
 import kotlinx.coroutines.Dispatchers
@@ -53,10 +54,10 @@ class MainActivity : BaseActivity<ActivityHomeBinding>() {
 
     override fun initActionBar() {
         binding.actionBar.apply {
-            cvLogo.visible()
+            cvLogo.gone()
             tvCenter.text = strings(R.string.character_maker)
             tvCenter.select()
-            tvCenter.visible()
+            tvCenter.gone()
             btnActionBarRight.setImageResource(R.drawable.ic_settings)
             btnActionBarRight.visible()
         }

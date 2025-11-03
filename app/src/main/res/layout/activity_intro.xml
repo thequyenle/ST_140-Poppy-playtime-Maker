@@ -50,10 +50,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="110dp"
-        android:fontFamily="@font/roboto_medium"
+        android:fontFamily="@font/londrina_solid_regular"
         android:padding="3dp"
         android:text="@string/next"
-        android:textColor="@color/purple_F0"
+        android:textColor="@color/purple"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

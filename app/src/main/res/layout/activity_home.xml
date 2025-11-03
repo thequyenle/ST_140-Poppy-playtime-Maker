@@ -25,13 +25,25 @@
             layout="@layout/layout_actionbar" />
     </FrameLayout>
 
+
+    <ImageView
+        android:id="@+id/title"
+        android:layout_width="320dp"
+        android:layout_height="202dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/img_home_title"/>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutActionBar">
+        app:layout_constraintTop_toBottomOf="@id/title">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,7 +75,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="13dp"
                         android:layout_weight="198"
-                        android:fontFamily="@font/toruksc_regular"
+                        android:fontFamily="@font/creepstercaps_regular"
                         android:gravity="center"
                         android:text="@string/character_maker"
                         android:textColor="@color/white"
@@ -101,7 +113,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginEnd="17dp"
                         android:layout_weight="197"
-                        android:fontFamily="@font/toruksc_regular"
+                        android:fontFamily="@font/creepstercaps_regular"
                         android:gravity="center"
                         android:text="@string/my_creation"
                         android:textColor="@color/white"
@@ -114,7 +126,9 @@
                 android:id="@+id/btnRandom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                >
 
                 <ImageView
                     android:layout_width="match_parent"
