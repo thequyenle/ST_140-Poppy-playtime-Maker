@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_bg_app"/>
+        android:src="@drawable/img_bg_app" />
 
     <!--    layoutActionBar-->
     <FrameLayout
@@ -30,11 +30,11 @@
         android:id="@+id/title"
         android:layout_width="320dp"
         android:layout_height="202dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="64dp"
+        android:src="@drawable/img_home_title"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/img_home_title"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ScrollView
@@ -69,7 +69,12 @@
                     android:orientation="horizontal"
                     android:weightSum="328">
 
-                    <TextView
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="131" />
+                    <com.charactor.avatar.maker.pfp.core.custom.text.DoubleStrokeTextView
+
                         android:id="@+id/tv1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -79,7 +84,10 @@
                         android:gravity="center"
                         android:text="@string/character_maker"
                         android:textColor="@color/white"
-                        android:textSize="30sp" />
+                        android:textSize="48sp"
+                        app:outerStrokeColor="#E906FF"
+                        app:outerStrokeWidth="1dp"
+                        />
                 </LinearLayout>
             </FrameLayout>
 
@@ -102,12 +110,9 @@
                     android:orientation="horizontal"
                     android:weightSum="328">
 
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="131" />
 
-                    <TextView
+
+                    <com.charactor.avatar.maker.pfp.core.custom.text.DoubleStrokeTextView
                         android:id="@+id/tv2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -117,7 +122,10 @@
                         android:gravity="center"
                         android:text="@string/my_creation"
                         android:textColor="@color/white"
-                        android:textSize="30sp" />
+                        android:textSize="48sp"
+                        app:outerStrokeColor="#29BAAB"
+                        app:outerStrokeWidth="1dp"
+                         />
                 </LinearLayout>
             </FrameLayout>
 
@@ -127,8 +135,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:visibility="gone"
-                >
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="match_parent"

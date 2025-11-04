@@ -67,7 +67,7 @@
     <string name="download_failed_please_try_again_later">Download failed, please try again later!</string>
     <string name="save_failed_please_try_again">Save failed, please try again!</string>
     <string name="delete_failed_please_try_again">Delete failed, please try again!</string>
-    <string name="my_creation">My Creation</string>
+    <string name="my_creation">Creation</string>
     <string name="delete_your_customize">Delete your customize</string>
     <string name="are_you_sure_you_want_to_delete_the_image">Are you sure you want to delete the image?</string>
     <string name="haven_t_saved_it_yet_do_you_want_to_exit">Haven’t saved it yet, do you want to exit?</string>

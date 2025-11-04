@@ -15,6 +15,7 @@ import com.charactor.avatar.maker.pfp.core.utils.key.IntentKey
 import com.charactor.avatar.maker.pfp.core.utils.state.RateState
 import com.charactor.avatar.maker.pfp.databinding.ActivitySettingsBinding
 import com.charactor.avatar.maker.pfp.activity_app.language.LanguageActivity
+import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import com.charactor.avatar.maker.pfp.core.extensions.setOnSingleClick
 import com.charactor.avatar.maker.pfp.core.extensions.strings
 import kotlin.jvm.java
@@ -52,7 +53,8 @@ class SettingsActivity : BaseActivity<ActivitySettingsBinding>() {
         binding.actionBar.apply {
             tvCenter.text = strings(R.string.settings)
             tvCenter.visible()
-
+            tvCenter.setFont(R.font.creepstercaps_regular)
+            tvCenter.textSize = 32f
             btnActionBarLeft.setImageResource(R.drawable.ic_back)
             btnActionBarLeft.visible()
         }
