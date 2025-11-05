@@ -139,3 +139,12 @@ fun View.setRoundedBackground(
         )
     }
 }
+
+// ----------------------------
+// Dimension extensions
+// ----------------------------
+val Int.dp: Int
+    get() = (this * android.content.res.Resources.getSystem().displayMetrics.density).toInt()
+
+val Float.dp: Float
+    get() = this * android.content.res.Resources.getSystem().displayMetrics.density

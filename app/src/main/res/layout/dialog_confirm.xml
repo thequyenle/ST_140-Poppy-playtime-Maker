@@ -22,11 +22,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:fontFamily="@font/roboto_medium"
+                android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
                 android:text="@string/delete"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textColor="#000000"
+                android:textSize="16sp" />
             <!--            tvDescription-->
             <TextView
                 android:id="@+id/tvDescription"
@@ -34,10 +34,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="21dp"
                 android:layout_marginTop="14dp"
-                android:fontFamily="@font/roboto_regular"
+                android:fontFamily="@font/montserrat_medium"
                 android:gravity="center"
                 android:text="@string/are_you_sure_want_to_delete_this_item"
-                android:textColor="#595959"
+                android:textColor="#999999"
                 android:textSize="16sp" />
 
             <FrameLayout
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="21dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="5dp">
 
                 <include layout="@layout/layout_bottom" android:id="@+id/flBottom"/>
             </FrameLayout>

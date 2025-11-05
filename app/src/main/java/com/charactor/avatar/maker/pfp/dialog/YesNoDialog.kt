@@ -1,11 +1,13 @@
 package com.charactor.avatar.maker.pfp.dialog
 
 import android.app.Activity
+import android.graphics.Color
 import com.charactor.avatar.maker.pfp.core.extensions.gone
 import com.charactor.avatar.maker.pfp.core.extensions.hideNavigation
 import com.charactor.avatar.maker.pfp.core.extensions.setOnSingleClick
 import com.charactor.avatar.maker.pfp.R
 import com.charactor.avatar.maker.pfp.core.base.BaseDialog
+import com.charactor.avatar.maker.pfp.core.extensions.dp
 import com.charactor.avatar.maker.pfp.core.extensions.strings
 import com.charactor.avatar.maker.pfp.databinding.DialogConfirmBinding
 
@@ -33,10 +35,10 @@ class YesNoDialog(
     override fun initAction() {
         binding.apply {
             flBottom.btnBottomLeft.setOnSingleClick {
-                onNoClick.invoke()
+                onYesClick.invoke()
             }
             flBottom.btnBottomRight.setOnSingleClick {
-                onYesClick.invoke()
+                onNoClick.invoke()
             }
             flOutSide.setOnSingleClick {
                 onDismissClick.invoke()
@@ -60,8 +62,21 @@ class YesNoDialog(
             imvBottomLeft.gone()
             imvBottomRight.gone()
 
-            tvBottomLeft.text = context.strings(R.string.no)
-            tvBottomRight.text = context.strings(R.string.yes)
+            // Yes button (left)
+            btnBottomLeft.apply {
+                setBackgroundResource(R.drawable.bg_dialog_yes)
+                layoutParams = layoutParams.apply { height = 44.dp }
+            }
+            tvBottomLeft.text = context.strings(R.string.yes)
+            tvBottomLeft.setTextColor(Color.parseColor("#A717E0"))
+
+            // No button (right)
+            btnBottomRight.apply {
+                setBackgroundResource(R.drawable.bg_dialog_no)
+                layoutParams = layoutParams.apply { height = 44.dp }
+            }
+            tvBottomRight.text = context.strings(R.string.no)
+            tvBottomRight.setTextColor(Color.parseColor("#FFFFFF"))
         }
     }
 }

@@ -48,7 +48,7 @@
     <string name="exit">Exit</string>
     <string name="have_rated">Thank you for rate our app</string>
     <string name="share">Share</string>
-    <string name="delete">Delete</string>
+    <string name="delete">Delete your customize</string>
     <string name="download">Download</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -61,7 +61,7 @@
     <string name="an_error_occurred">An error occurred, please try again later.</string>
     <string name="image_has_been_saved_successfully">Image has been saved successfully!</string>
     <string name="save">Save</string>
-    <string name="are_you_sure_want_to_delete_this_item">Are you sure want to delete this item?</string>
+    <string name="are_you_sure_want_to_delete_this_item">Are you sure you want to delete the image?</string>
     <string name="downloading">Downloading...</string>
     <string name="successfully">Successfully</string>
     <string name="download_failed_please_try_again_later">Download failed, please try again later!</string>

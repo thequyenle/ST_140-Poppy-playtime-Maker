@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.PopupWindow
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.charactor.avatar.maker.pfp.R
@@ -209,23 +210,47 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
 
     override fun initActionBar() {
         binding.actionBar.apply {
+            val iconSize = UnitHelper.dpToPx(this@MyCreationActivity, 40)
+
             btnActionBarLeft.setImageResource(R.drawable.ic_back)
             btnActionBarLeft.visible()
 
+            btnActionBarNextToRight.layoutParams.width = iconSize
+            btnActionBarNextToRight.layoutParams.height = iconSize
+            btnActionBarNextToRight.requestLayout()
+
+            btnActionBarRight.layoutParams.width = iconSize
+            btnActionBarRight.layoutParams.height = iconSize
+            btnActionBarRight.requestLayout()
+
             tvCenter.setTextContent(this@MyCreationActivity, R.string.my_creation)
             tvCenter.visible()
+            tvCenter.textSize = 32f
             tvCenter.setFont(R.font.creepstercaps_regular)
             btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
             btnActionBarNextToRight.setImageResource(R.drawable.ic_delete_red)
         }
 
         binding.bottomBar.apply {
-            tvBottomLeft.text = strings(R.string.share)
-            tvBottomLeft.select()
+            tvBottomLeft.apply {
+                text = strings(R.string.share)
+                setFont(R.font.creepstercaps_regular)  // Hoặc font bạn muốn
+                textSize = 20f  // 20sp
+                setTextColor(ContextCompat.getColor(this@MyCreationActivity, R.color.purple))  // Hoặc dùng hex
+                // setTextColor(Color.parseColor("#A717E0"))  // Cách 2: Dùng hex trực tiếp
+                select()
+            }
+
             imvBottomLeft.setImageResource(R.drawable.ic_share_white)
 
-            tvBottomRight.text = strings(R.string.download)
-            tvBottomRight.select()
+            tvBottomRight.apply {
+                text = strings(R.string.download)
+                setFont(R.font.creepstercaps_regular)  // Hoặc font bạn muốn
+                textSize = 20f  // 20sp
+                setTextColor(ContextCompat.getColor(this@MyCreationActivity, R.color.purple))  // Hoặc dùng hex
+                // setTextColor(Color.parseColor("#A717E0"))  // Cách 2: Dùng hex trực tiếp
+                select()
+            }
             imvBottomRight.setImageResource(R.drawable.ic_download_white)
         }
     }

@@ -106,7 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/bg_100_stroke_gradient_white_solid_black"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/btnRandom"
@@ -122,7 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="12dp"
-            android:layout_marginEnd="38dp"
+            android:layout_marginEnd="12dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_color" />
@@ -134,7 +134,7 @@
             android:layout_height="18dp"
             android:layout_gravity="center_vertical|end"
             android:layout_marginEnd="8dp"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:src="@drawable/ic_close_color" />
     </FrameLayout>
 
