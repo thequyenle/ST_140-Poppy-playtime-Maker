@@ -3,6 +3,7 @@ package com.charactor.avatar.maker.pfp.activity_app.language
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.charactor.avatar.maker.pfp.R
 import com.charactor.avatar.maker.pfp.core.base.BaseActivity
@@ -16,6 +17,7 @@ import com.charactor.avatar.maker.pfp.core.utils.key.IntentKey
 import com.charactor.avatar.maker.pfp.databinding.ActivityLanguageBinding
 import com.charactor.avatar.maker.pfp.activity_app.main.MainActivity
 import com.charactor.avatar.maker.pfp.activity_app.intro.IntroActivity
+import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import com.charactor.avatar.maker.pfp.core.extensions.setOnSingleClick
 import com.charactor.avatar.maker.pfp.core.extensions.strings
 import com.charactor.avatar.maker.pfp.ui.language.LanguageViewModel
@@ -83,8 +85,16 @@ class LanguageActivity : BaseActivity<ActivityLanguageBinding>() {
             btnActionBarLeft.setImageResource(R.drawable.ic_back)
             btnActionBarRight.setImageResource(R.drawable.ic_done)
             val text = R.string.language
-            tvCenter.text = strings(text)
             tvStart.text = strings(text)
+            tvStart.setFont(R.font.jollylodger_regular)
+            tvStart.setTextColor(ContextCompat.getColor(this@LanguageActivity, R.color.white))
+            tvStart.textSize = 32f
+            tvStart.text = strings(text)
+            tvCenter.text = strings(text)
+            tvCenter.setFont(R.font.jollylodger_regular)
+            tvCenter.setTextColor(ContextCompat.getColor(this@LanguageActivity, R.color.white))
+            tvCenter.textSize = 32f
+            tvCenter.text = strings(text)
         }
     }
 

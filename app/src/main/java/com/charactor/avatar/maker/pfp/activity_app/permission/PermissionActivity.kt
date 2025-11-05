@@ -44,18 +44,17 @@ class PermissionActivity : BaseActivity<ActivityPermissionBinding>() {
     }
 
     override fun initText() {
-        binding.actionBar.tvCenter.select()
-        setGradientTextHeightColor(binding.tvContinue, "#000000".toColorInt(), "#000000".toColorInt())
         val textRes =
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) R.string.to_access_13 else R.string.to_access
 
         binding.txtPer.text = TextUtils.concat(
-            createColoredText(R.string.allow, R.color.dark),
+            createColoredText(R.string.allow, R.color.dark,R.font.londrina_solid_regular),
             " ",
-            createColoredText(R.string.app_name, R.color.dark),
+            createColoredText(R.string.app_name, R.color.dark,R.font.londrina_solid_regular),
             " ",
-            createColoredText(textRes, R.color.dark)
+            createColoredText(textRes, R.color.dark,R.font.londrina_solid_regular)
         )
+        binding.txtPer.textSize = 14f
     }
 
     override fun viewListener() {
@@ -128,7 +127,7 @@ class PermissionActivity : BaseActivity<ActivityPermissionBinding>() {
     override fun initActionBar() {
         binding.actionBar.tvCenter.apply {
             text = getString(R.string.permission)
-            visible()
+            gone()
         }
     }
 

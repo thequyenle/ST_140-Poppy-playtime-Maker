@@ -56,8 +56,8 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginVertical="17dp"
                         android:src="@drawable/ic_lang_set" />
@@ -68,11 +68,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_weight="8"
-                    android:fontFamily="@font/roboto_medium"
+                    android:fontFamily="@font/creepstercaps_regular"
                     android:gravity="center_vertical"
                     android:text="@string/language"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textColor="@color/purple"
+                    android:textSize="16sp" />
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -106,8 +106,8 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginVertical="17dp"
                         android:src="@drawable/ic_rate_set" />
@@ -118,11 +118,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_weight="8"
-                    android:fontFamily="@font/roboto_medium"
+                    android:fontFamily="@font/creepstercaps_regular"
                     android:gravity="center_vertical"
                     android:text="@string/rate_us"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textColor="@color/purple"
+                    android:textSize="16sp" />
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -155,8 +155,8 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginVertical="17dp"
                         android:src="@drawable/ic_share_set" />
@@ -167,11 +167,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_weight="8"
-                    android:fontFamily="@font/roboto_medium"
+                    android:fontFamily="@font/creepstercaps_regular"
                     android:gravity="center_vertical"
                     android:text="@string/share_app"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textColor="@color/purple"
+                    android:textSize="16sp" />
 
                 <FrameLayout
                     android:layout_width="0dp"
@@ -204,8 +204,8 @@
                     android:layout_weight="1">
 
                     <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginVertical="17dp"
                         android:src="@drawable/ic_policy_set" />
@@ -216,11 +216,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_weight="8"
-                    android:fontFamily="@font/roboto_medium"
+                    android:fontFamily="@font/creepstercaps_regular"
                     android:gravity="center_vertical"
                     android:text="@string/privacy_policy"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textColor="@color/purple"
+                    android:textSize="16sp" />
 
                 <FrameLayout
                     android:layout_width="0dp"

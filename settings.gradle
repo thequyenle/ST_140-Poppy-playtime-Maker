@@ -42,5 +42,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ST186_Character_maker_2"
+rootProject.name = "ST140_Poppy"
 include ':app'

@@ -68,7 +68,7 @@
                         android:layout_height="match_parent"
                         android:clickable="true"
                         android:focusable="true"
-                        android:scaleType="fitXY"
+                        android:scaleType="center"
                         android:src="@drawable/ic_none"
                         android:visibility="gone" />
 
@@ -79,7 +79,7 @@
                         android:layout_height="match_parent"
                         android:clickable="true"
                         android:focusable="true"
-                        android:scaleType="centerCrop"
+                        android:scaleType="center"
                         android:src="@drawable/ic_random_layer"
                         android:visibility="gone" />
                 </androidx.cardview.widget.CardView>

@@ -1,6 +1,7 @@
 package com.charactor.avatar.maker.pfp.activity_app.main
 
 import android.annotation.SuppressLint
+import android.util.TypedValue
 import android.view.LayoutInflater
 import androidx.lifecycle.lifecycleScope
 import com.charactor.avatar.maker.pfp.R
@@ -60,6 +61,16 @@ class MainActivity : BaseActivity<ActivityHomeBinding>() {
             tvCenter.gone()
             btnActionBarRight.setImageResource(R.drawable.ic_settings)
             btnActionBarRight.visible()
+
+            var widthHeightInPx = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                40f,
+                resources.displayMetrics
+            )
+            btnActionBarRight.layoutParams = btnActionBarRight.layoutParams.apply {
+                width = widthHeightInPx.toInt()
+                height = widthHeightInPx.toInt()
+            }
         }
     }
 

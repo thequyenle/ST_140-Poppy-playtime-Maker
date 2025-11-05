@@ -81,6 +81,7 @@
 -keep class com.yalantis.ucrop** { *; }
 -keep interface com.yalantis.ucrop** { *; }
 
+
 -keep class com.charactor.avatar.maker.pfp.activity_app.splash.SplashActivity.** {*; }
 -keep class com.charactor.avatar.maker.pfp.data.** {*; }
 -keep public class com.google.android.gms.** { public protected *; }

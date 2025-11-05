@@ -23,10 +23,10 @@ object DataLocal {
 
     fun getLanguageList(): ArrayList<LanguageModel> {
         return arrayListOf(
+            LanguageModel("en", "English", R.drawable.ic_flag_english),
             LanguageModel("hi", "Hindi", R.drawable.ic_flag_hindi),
             LanguageModel("es", "Spanish", R.drawable.ic_flag_spanish),
             LanguageModel("fr", "French", R.drawable.ic_flag_french),
-            LanguageModel("en", "English", R.drawable.ic_flag_english),
             LanguageModel("pt", "Portuguese", R.drawable.ic_flag_portugeese),
             LanguageModel("in", "Indonesian", R.drawable.ic_flag_indo),
             LanguageModel("de", "German", R.drawable.ic_flag_germani),

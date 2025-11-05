@@ -39,6 +39,7 @@ import com.charactor.avatar.maker.pfp.activity_app.view.ViewActivity
 import com.charactor.avatar.maker.pfp.databinding.PopupMyAlbumBinding
 import com.charactor.avatar.maker.pfp.core.extensions.strings
 import com.charactor.avatar.maker.pfp.activity_app.permission.PermissionViewModel
+import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import kotlinx.coroutines.launch
 
 class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
@@ -213,7 +214,7 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
 
             tvCenter.setTextContent(this@MyCreationActivity, R.string.my_creation)
             tvCenter.visible()
-
+            tvCenter.setFont(R.font.creepstercaps_regular)
             btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
             btnActionBarNextToRight.setImageResource(R.drawable.ic_delete_red)
         }

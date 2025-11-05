@@ -43,28 +43,41 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.65" />
-    <!--    btnFlip-->
-    <ImageView
-        android:id="@+id/btnFlip"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_flip"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutActionBar" />
 
+<ImageView
+    android:id="@+id/imgReset"
+    android:layout_width="56dp"
+    android:layout_height="96dp"
+    android:scaleType="fitXY"
+    android:layout_marginEnd="18dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/layoutActionBar"
+    android:src="@drawable/frame_reset_flip"/>
     <!--    btnReset-->
     <ImageView
         android:id="@+id/btnReset"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_reset"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFlip" />
+        app:layout_constraintStart_toStartOf="@id/imgReset"
+        app:layout_constraintEnd_toEndOf="@id/imgReset"
+        app:layout_constraintTop_toTopOf="@+id/imgReset"
+        android:layout_marginTop="10dp"
+        />
+    <!--    btnFlip-->
+    <ImageView
+        android:id="@+id/btnFlip"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_flip"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/imgReset"
+        app:layout_constraintEnd_toEndOf="@id/imgReset"
+        app:layout_constraintBottom_toBottomOf="@id/imgReset" />
+
+
 
     <!--    btnHide-->
     <ImageView
@@ -75,6 +88,7 @@
         android:layout_marginEnd="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_show"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnReset" />
 
@@ -127,8 +141,8 @@
     <!-- btnRandom -->
     <ImageView
         android:id="@+id/btnRandom"
-        android:layout_width="44dp"
-        android:layout_height="40dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_margin="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_random"

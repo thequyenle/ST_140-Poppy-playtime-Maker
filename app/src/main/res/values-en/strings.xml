@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Character Avatar Creator</string>
+    <string name="app_name">Poppy playtime maker</string>
     <string name="go_to_setting_message">The app needs this permission</string>
     <string name="settings">Settings</string>
     <string name="this_action_can_contain_ads">This action can contain ads</string>
@@ -7,9 +7,9 @@
     <string name="next">Next</string>
     <string name="language">Language</string>
 
-    <string name="title_1">Create Your Own Avatar However You Like</string>
-    <string name="title_2">Variety Of Unique Category</string>
-    <string name="title_3">Diverse Characters Style</string>
+    <string name="title_1">CREATE YOUR OWN AVATAR HOWEVER YOU LIKE</string>
+    <string name="title_2">DIVERSE UNIQUE CATEGORIES</string>
+    <string name="title_3">GREAT VARIETY OF ITEMS</string>
 
     <string name="permission">Permission</string>
     <string name="storage">Storage</string>
@@ -18,7 +18,7 @@
     <string name="granted_notification">Notification permission granted</string>
     <string name="granted_storage">Storage permission granted</string>
     <string name="allow">Allow</string>
-    <string name="to_access">to access photos on your device</string>
+    <string name="to_access">to access photos, media and files on your device</string>
     <string name="to_access_13">to access notification on your device</string>
 
     <string name="rate_us">Rate Us</string>
@@ -73,5 +73,6 @@
     <string name="haven_t_saved_it_yet_do_you_want_to_exit">Haven’t saved it yet, do you want to exit?</string>
     <string name="change_your_whole_design_are_you_sure">Do you want to reset all?</string>
     <string name="character_maker">Create Maker</string>
-    <string name="no_item_here">No Item Here</string>
+    <string name="no_item_here">You don\'t have any character</string>
+    <string name="category_choose_character">Category</string>
 </resources>

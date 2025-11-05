@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.drawable.GradientDrawable
 import android.view.View
 import android.view.WindowManager
 import android.widget.TextView
@@ -120,4 +121,21 @@ fun TextView.setTextContent(context: Context, resId: Int) {
 
 fun Context.strings(resId: Int) : String {
     return getString(resId)
+}
+
+fun View.setRoundedBackground(
+    backgroundColor: String,
+    cornerRadiusDp: Float,
+    strokeWidthDp: Int,
+    strokeColor: String
+) {
+    background = GradientDrawable().apply {
+        shape = GradientDrawable.RECTANGLE
+        setColor(android.graphics.Color.parseColor(backgroundColor))
+        cornerRadius = cornerRadiusDp * resources.displayMetrics.density
+        setStroke(
+            (strokeWidthDp * resources.displayMetrics.density).toInt(),
+            android.graphics.Color.parseColor(strokeColor)
+        )
+    }
 }

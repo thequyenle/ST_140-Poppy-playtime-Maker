@@ -74,4 +74,5 @@
     <string name="change_your_whole_design_are_you_sure">Do you want to reset all?</string>
     <string name="character_maker">Create Maker</string>
     <string name="no_item_here">No Item Here</string>
+    <string name="category_choose_character">Category</string>
 </resources>

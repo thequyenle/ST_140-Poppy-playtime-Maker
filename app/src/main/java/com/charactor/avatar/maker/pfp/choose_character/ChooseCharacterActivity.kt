@@ -15,6 +15,7 @@ import com.charactor.avatar.maker.pfp.activity_app.random_character.RandomCharac
 import com.charactor.avatar.maker.pfp.core.base.BaseActivity
 import com.charactor.avatar.maker.pfp.core.extensions.handleBackLeftToRight
 import com.charactor.avatar.maker.pfp.core.extensions.select
+import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import com.charactor.avatar.maker.pfp.core.extensions.setOnSingleClick
 import com.charactor.avatar.maker.pfp.core.extensions.startIntentRightToLeft
 import com.charactor.avatar.maker.pfp.core.extensions.strings
@@ -65,6 +66,11 @@ class ChooseCharacterActivity : BaseActivity<ActivityChooseCharacterBinding>() {
         binding.actionBar.apply {
             btnActionBarLeft.setImageResource(R.drawable.ic_back)
             btnActionBarLeft.visible()
+            tvCenter.setFont(R.font.creepstercaps_regular)
+            tvCenter.textSize = 32f
+            tvCenter.visible()
+            tvCenter.text = strings(R.string.category_choose_character)
+
         }
     }
 

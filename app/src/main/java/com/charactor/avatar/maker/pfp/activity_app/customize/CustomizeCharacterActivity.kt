@@ -1,8 +1,13 @@
 package com.charactor.avatar.maker.pfp.activity_app.customize
 
+import android.content.Context
+import android.graphics.Color
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.viewModels
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.charactor.avatar.maker.pfp.R
@@ -24,7 +29,9 @@ import com.charactor.avatar.maker.pfp.databinding.ActivityCustomizeBinding
 import com.charactor.avatar.maker.pfp.dialog.YesNoDialog
 import com.charactor.avatar.maker.pfp.activity_app.background_customize.BackgroundCustomizeActivity
 import com.charactor.avatar.maker.pfp.activity_app.main.DataViewModel
+import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import com.charactor.avatar.maker.pfp.core.extensions.setOnSingleClick
+import com.charactor.avatar.maker.pfp.core.extensions.setRoundedBackground
 import com.charactor.avatar.maker.pfp.core.helper.MediaHelper
 import com.charactor.avatar.maker.pfp.data.model.custom.SuggestionModel
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -138,9 +145,27 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
         binding.actionBar.apply {
             btnActionBarLeft.setImageResource(R.drawable.ic_back)
             btnActionBarLeft.visible()
-
             btnActionBarRightText.visible()
-            tvRightText.select()
+            tvRightText.apply {
+                text = getString(R.string.next)
+                textSize = 16f  // Set size 16sp
+                setFont(R.font.creepstercaps_regular)
+                setTextColor(ContextCompat.getColor(this@CustomizeCharacterActivity, R.color.purple))
+                gravity = Gravity.CENTER  // Căn giữa text trong button
+                select()
+            }
+            // Set kích thước cho button
+            btnActionBarRightText.apply {
+                visible()
+                // Set background bằng ảnh
+                setBackgroundResource(R.drawable.img_btn_custom_next)
+
+                val params = layoutParams as ConstraintLayout.LayoutParams
+                params.width = (56 * resources.displayMetrics.density).toInt() // 56dp
+                params.height = (40 * resources.displayMetrics.density).toInt() // 40dp
+                layoutParams = params
+
+            }
 
         }
     }
