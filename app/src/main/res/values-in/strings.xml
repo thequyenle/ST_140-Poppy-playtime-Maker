@@ -76,4 +76,5 @@
     <string name="no_item_here">Tidak ada item di sini</string>
     <string name="category_choose_character">Category</string>
     <string name="title_view">CHARACTER</string>
+    <string name="go_to_settings">Go to settings</string>
 </resources>

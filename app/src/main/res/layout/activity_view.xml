@@ -44,13 +44,14 @@
         android:id="@+id/tvSuccess"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/roboto_italic"
         android:gravity="center"
         android:text="@string/image_has_been_saved_successfully"
         android:textColor="@color/white"
         android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/imvImage"
         app:layout_constraintBottom_toTopOf="@+id/gl0725" />
 
     <!--    gl0725-->
