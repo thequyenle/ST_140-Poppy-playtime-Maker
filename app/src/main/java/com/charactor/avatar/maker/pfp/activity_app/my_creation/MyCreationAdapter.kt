@@ -33,7 +33,7 @@ class MyCreationAdapter(val context: Context) : BaseAdapter<MyAlbumModel, ItemMy
                 binding.btnMore.gone()
             } else {
                 binding.btnSelect.gone()
-                binding.btnMore.visible()
+                binding.btnMore.gone()
             }
 
             if (item.isSelected) {

@@ -1,9 +1,12 @@
 package com.charactor.avatar.maker.pfp.activity_app.background_customize
 
 import android.content.Intent
+import android.view.Gravity
 import android.view.LayoutInflater
 import androidx.activity.viewModels
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.charactor.avatar.maker.pfp.R
 import com.charactor.avatar.maker.pfp.core.base.BaseActivity
@@ -18,6 +21,7 @@ import com.charactor.avatar.maker.pfp.core.utils.state.SaveState
 import com.charactor.avatar.maker.pfp.databinding.ActivityBackgroundBinding
 import com.charactor.avatar.maker.pfp.activity_app.view.ViewActivity
 import com.charactor.avatar.maker.pfp.core.extensions.select
+import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import kotlinx.coroutines.launch
 
 class BackgroundCustomizeActivity : BaseActivity<ActivityBackgroundBinding>() {
@@ -75,9 +79,28 @@ class BackgroundCustomizeActivity : BaseActivity<ActivityBackgroundBinding>() {
             btnActionBarLeft.setImageResource(R.drawable.ic_back)
             btnActionBarLeft.visible()
 
-            tvRightText.text = getString(R.string.save)
             tvRightText.select()
             btnActionBarRightText.visible()
+            tvRightText.apply {
+                text = getString(R.string.save)
+                textSize = 16f  // Set size 16sp
+                setFont(R.font.creepstercaps_regular)
+                setTextColor(ContextCompat.getColor(this@BackgroundCustomizeActivity, R.color.purple))
+                gravity = Gravity.CENTER  // Căn giữa text trong button
+                select()
+            }
+            // Set kích thước cho button
+            btnActionBarRightText.apply {
+                visible()
+                // Set background bằng ảnh
+                setBackgroundResource(R.drawable.img_btn_custom_next)
+
+                val params = layoutParams as ConstraintLayout.LayoutParams
+                params.width = (56 * resources.displayMetrics.density).toInt() // 56dp
+                params.height = (40 * resources.displayMetrics.density).toInt() // 40dp
+                layoutParams = params
+
+            }
 
         }
     }

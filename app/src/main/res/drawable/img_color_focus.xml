@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Layer 1: Viền tím bên ngoài -->
+    <item>
+        <shape>
+            <corners android:radius="8dp" />
+            <solid android:color="#A717E0" />
+        </shape>
+    </item>
+
+    <!-- Layer 2: Viền trong suốt (tạo khoảng trống cho màu bên dưới) -->
+    <item
+        android:top="2dp"
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp">
+        <shape>
+            <corners android:radius="6dp" />
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</layer-list>

@@ -51,7 +51,7 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
     val hideList: ArrayList<View> by lazy {
         arrayListOf(
             binding.btnRandom,
-            binding.btnColor,
+           // binding.btnColor,
             binding.flColor,
             binding.rcvLayer,
             binding.flBottomNav
@@ -130,8 +130,8 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
             btnRandom.setOnSingleClick { viewModel.checkDataInternet(this@CustomizeCharacterActivity) { handleRandomAllLayer() } }
             btnReset.setOnSingleClick { handleReset() }
             btnFlip.setOnSingleClick { viewModel.setIsFlip() }
-            btnColor.setOnSingleClick { handleStatusColor() }
-            btnCloseColor.setOnSingleClick { handleStatusColor(true) }
+          //  btnColor.setOnSingleClick { handleStatusColor() }
+            //btnCloseColor.setOnSingleClick { handleStatusColor(true) }
             btnHide.setOnSingleClick { viewModel.setIsHideView() }
         }
         handleRcv()
@@ -311,14 +311,14 @@ class CustomizeCharacterActivity : BaseActivity<ActivityCustomizeBinding>() {
 
     private fun checkStatusColor() {
         if (viewModel.colorItemNavList[viewModel.positionNavSelected].isNotEmpty()) {
-            binding.btnColor.visible()
+        //    binding.btnColor.visible()
             if (viewModel.isShowColorList[viewModel.positionNavSelected]) {
                 binding.flColor.visible()
             } else {
                 binding.flColor.invisible()
             }
         } else {
-            binding.btnColor.invisible()
+          //  binding.btnColor.invisible()
             binding.flColor.invisible()
         }
     }

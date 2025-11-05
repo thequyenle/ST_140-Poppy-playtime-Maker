@@ -75,4 +75,5 @@
     <string name="character_maker">Charakter-Maker</string>
     <string name="no_item_here">Kein Element hier</string>
     <string name="category_choose_character">Category</string>
+    <string name="title_view">CHARACTER</string>
 </resources>

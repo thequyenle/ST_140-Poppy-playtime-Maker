@@ -36,7 +36,7 @@ class BackgroundCustomizeAdapter(
                 } else {
                     Triple(
                         UnitHelper.pxToDpInt(context, 8).toFloat(),
-                        R.drawable.img_white,
+                        android.R.color.transparent,
                         UnitHelper.pxToDpInt(context, 2)
                     )
                 }

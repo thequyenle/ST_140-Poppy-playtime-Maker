@@ -1,11 +1,14 @@
 package com.charactor.avatar.maker.pfp.activity_app.view
 
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Build
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.activity.viewModels
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.charactor.avatar.maker.pfp.R
 import com.charactor.avatar.maker.pfp.core.base.BaseActivity
@@ -34,6 +37,7 @@ import com.charactor.avatar.maker.pfp.core.extensions.startIntentRightToLeft
 import com.charactor.avatar.maker.pfp.core.extensions.strings
 import com.charactor.avatar.maker.pfp.core.helper.UnitHelper
 import com.charactor.avatar.maker.pfp.activity_app.permission.PermissionViewModel
+import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import kotlinx.coroutines.launch
 
 class ViewActivity : BaseActivity<ActivityViewBinding>() {
@@ -76,7 +80,8 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
             actionBar.apply {
                 btnActionBarLeft.setOnSingleClick { handleBackLeftToRight() }
                 btnActionBarRight.setOnSingleClick { handleActionBarRight() }
-                btnActionBarNextToRight.setOnSingleClick { viewModel.shareFiles(this@ViewActivity) }
+                btnActionBarNextToRight.setOnSingleClick { startIntentRightToLeft(MyCreationActivity::class.java, true) }
+
             }
             bottomBar.apply {
                 btnBottomLeft.setOnSingleClick { handleBottomBarLeft() }
@@ -99,8 +104,25 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
     private fun setUpViewUI() {
         binding.apply {
             actionBar.apply {
-                btnActionBarRight.setImageResource(R.drawable.ic_delete_red)
-                btnActionBarRight.visible()
+                btnActionBarRight.apply {
+                    setImageResource(R.drawable.ic_delete_red)
+                    visible()
+
+                    // Set kích thước 40x40 dp
+                    layoutParams = (layoutParams as ConstraintLayout.LayoutParams).apply {
+                        width = (40 * resources.displayMetrics.density).toInt()  // 40dp
+                        height = (40 * resources.displayMetrics.density).toInt() // 40dp
+                    }
+                }
+
+                tvCenter.apply {
+                    text = strings(R.string.title_view)  // Thay text bạn muốn
+                    setFont(R.font.creepstercaps_regular)  // Hoặc font bạn muốn
+                    textSize = 32f  // 16sp
+                    setTextColor(Color.parseColor("#FFFFFF"))  // Màu trắng
+                    select()
+                }
+                tvCenter.visible()
             }
 
             tvSuccess.gone()
@@ -112,12 +134,25 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
 
 
             binding.bottomBar.apply {
-                tvBottomLeft.text = strings(R.string.share)
-                tvBottomLeft.select()
+                tvBottomLeft.apply {
+                    text = strings(R.string.share)
+                    setFont(R.font.creepstercaps_regular)  // Hoặc font bạn muốn
+                    textSize = 20f  // 20sp
+                    setTextColor(ContextCompat.getColor(this@ViewActivity, R.color.purple))  // Hoặc dùng hex
+                    // setTextColor(Color.parseColor("#A717E0"))  // Cách 2: Dùng hex trực tiếp
+                    select()
+                }
+
                 imvBottomLeft.setImageResource(R.drawable.ic_share_white)
 
-                tvBottomRight.text = strings(R.string.download)
-                tvBottomRight.select()
+                tvBottomRight.apply {
+                    text = strings(R.string.download)
+                    setFont(R.font.creepstercaps_regular)  // Hoặc font bạn muốn
+                    textSize = 20f  // 20sp
+                    setTextColor(ContextCompat.getColor(this@ViewActivity, R.color.purple))  // Hoặc dùng hex
+                    // setTextColor(Color.parseColor("#A717E0"))  // Cách 2: Dùng hex trực tiếp
+                    select()
+                }
                 imvBottomRight.setImageResource(R.drawable.ic_download_white)
             }
         }
@@ -126,26 +161,47 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
     private fun setUpSuccessUI() {
         binding.apply {
             actionBar.apply {
-                btnActionBarRight.setImageResource(R.drawable.ic_home)
-                btnActionBarRight.visible()
+                btnActionBarRight.apply {
+                    setImageResource(R.drawable.ic_home)
+                    visible()
 
-                tvCenter.text = strings(R.string.successfully)
-                tvCenter.visible()
-                tvCenter.select()
+                    layoutParams = (layoutParams as ConstraintLayout.LayoutParams).apply {
+                        width = UnitHelper.dpToPx(this@ViewActivity, 40)
+                        height = UnitHelper.dpToPx(this@ViewActivity, 40)
+                    }
+                }
+                btnActionBarNextToRight.apply {
+                    setImageResource(R.drawable.ic_my_creation)
+                    visible()
 
-                btnActionBarNextToRight.setImageResource(R.drawable.ic_share_suc)
-                btnActionBarNextToRight.visible()
+                    layoutParams = (layoutParams as ConstraintLayout.LayoutParams).apply {
+                        width = UnitHelper.dpToPx(this@ViewActivity, 40)
+                        height = UnitHelper.dpToPx(this@ViewActivity, 40)
+                    }
+                }
             }
 
             tvSuccess.visible()
 
             binding.bottomBar.apply {
-                tvBottomLeft.text = strings(R.string.my_creation)
-                tvBottomLeft.select()
-                imvBottomLeft.setImageResource(R.drawable.ic_my_creation)
+                tvBottomLeft.apply {
+                    text = strings(R.string.share)
+                    setFont(R.font.creepstercaps_regular)  // Hoặc font bạn muốn
+                    textSize = 20f  // 20sp
+                    setTextColor(ContextCompat.getColor(this@ViewActivity, R.color.purple))  // Hoặc dùng hex
+                    // setTextColor(Color.parseColor("#A717E0"))  // Cách 2: Dùng hex trực tiếp
+                    select()
+                }
+                imvBottomLeft.setImageResource(R.drawable.ic_share_white)
 
-                tvBottomRight.text = strings(R.string.download)
-                tvBottomRight.select()
+                tvBottomRight.apply {
+                    text = strings(R.string.download)
+                    setFont(R.font.creepstercaps_regular)  // Hoặc font bạn muốn
+                    textSize = 20f  // 20sp
+                    setTextColor(ContextCompat.getColor(this@ViewActivity, R.color.purple))  // Hoặc dùng hex
+                    // setTextColor(Color.parseColor("#A717E0"))  // Cách 2: Dùng hex trực tiếp
+                    select()
+                }
                 imvBottomRight.setImageResource(R.drawable.ic_download_white)
             }
         }
@@ -170,7 +226,7 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
             }
 
             else -> {
-                startIntentRightToLeft(MyCreationActivity::class.java, true)
+                viewModel.shareFiles(this@ViewActivity)
             }
         }
     }
