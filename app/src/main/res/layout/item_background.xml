@@ -44,6 +44,32 @@
                 android:src="@drawable/img_bg_splash"
                 android:scaleType="centerCrop" />
 
+            <!-- ← QUYEN THÊM BUTTON NONE -->
+            <ImageView
+                android:id="@+id/btnNone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="center"
+                android:background="#FFFFFF"
+                android:src="@drawable/ic_none"
+                android:visibility="gone" />
+            <!-- ← QUYEN THÊM BUTTON NONE -->
+
+            <!-- ← QUYEN THÊM BUTTON RANDOM -->
+            <ImageView
+                android:id="@+id/btnRandom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="center"
+                android:background="#FFFFFF"
+                android:src="@drawable/ic_random_layer"
+                android:visibility="gone" />
+            <!-- ← QUYEN THÊM BUTTON RANDOM -->
+
         </androidx.cardview.widget.CardView>
 
 

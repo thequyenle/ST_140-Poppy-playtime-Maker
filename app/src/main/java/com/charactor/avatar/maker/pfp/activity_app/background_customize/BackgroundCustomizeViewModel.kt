@@ -27,16 +27,41 @@ class BackgroundCustomizeViewModel : ViewModel() {
 
 
     fun loadBackground(context: Context) {
-        _backgroundList.value.addAll(
+        //quyen
+        val list = arrayListOf<BackgroundModel>()
+
+        // 1. Thêm NONE vào đầu tiên
+        list.add(
+            BackgroundModel(
+                image = AssetsKey.NONE_LAYER,
+                isSelected = false
+            )
+        )
+
+        // 2. Thêm RANDOM vào thứ hai
+        list.add(
+            BackgroundModel(
+                image = AssetsKey.RANDOM_LAYER,
+                isSelected = false
+            )
+        )
+
+        // 3. Thêm ảnh từ assets
+        list.addAll(
             AssetHelper.getSubfoldersAsset(
                 context, AssetsKey.BACKGROUND_ASSET
-            ).mapIndexed { index, string ->
-                if (index == 0) {
-                    BackgroundModel(string, true)
-                } else {
-                    BackgroundModel(string)
-                }
-            })
+            ).map { string ->
+                BackgroundModel(string, false)
+            }
+        )
+
+        // 4. Chọn ảnh đầu tiên từ assets (index 2, vì 0 là NONE, 1 là RANDOM)
+        if (list.size > 2) {
+            list[2] = list[2].copy(isSelected = true)
+        }
+
+        _backgroundList.value = list
+        //quyen
     }
 
     fun changeFocusBackgroundList(position: Int) {
@@ -57,4 +82,27 @@ class BackgroundCustomizeViewModel : ViewModel() {
                 emit(state)
             }
     }.flowOn(Dispatchers.IO)
+
+    //quyen
+    fun randomBackground(): String {
+        // Bỏ qua position 0 (NONE) và position 1 (RANDOM), chỉ random từ vị trí 2 trở đi
+        val startPosition = 2
+        val endPosition = _backgroundList.value.size
+
+        if (endPosition <= startPosition) {
+            return ""  // Không có ảnh để random
+        }
+
+        // Random index
+        val randomIndex = (startPosition until endPosition).random()
+
+        // Lấy path random
+        val pathRandom = _backgroundList.value[randomIndex].image
+
+        // Cập nhật focus
+        changeFocusBackgroundList(randomIndex)
+
+        return pathRandom
+    }
+    //quyen
 }

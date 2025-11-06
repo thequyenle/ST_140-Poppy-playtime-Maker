@@ -9,14 +9,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.charactor.avatar.maker.pfp.R
 import com.charactor.avatar.maker.pfp.core.extensions.loadImageGlide
 import com.charactor.avatar.maker.pfp.core.extensions.setOnSingleClick
+//quyen
+import com.charactor.avatar.maker.pfp.core.extensions.visible
+import com.charactor.avatar.maker.pfp.core.extensions.gone
+//quyen
 import com.charactor.avatar.maker.pfp.core.helper.UnitHelper
+import com.charactor.avatar.maker.pfp.core.utils.key.AssetsKey
 import com.charactor.avatar.maker.pfp.data.model.custom.BackgroundModel
 import com.charactor.avatar.maker.pfp.databinding.ItemBackgroundBinding
 
 
 class BackgroundCustomizeAdapter(
     private val context: Context,
-    var onItemClick: (String, Int) -> Unit = { _, _ -> }
+    var onItemClick: (String, Int) -> Unit = { _, _ -> },
+    //quyen
+    var onNoneClick: (Int) -> Unit = {},
+    var onRandomClick: () -> Unit = {}
+    //quyen
 ) : ListAdapter<BackgroundModel, BackgroundCustomizeAdapter.BackgroundViewHolder>(DiffCallback) {
 
     inner class BackgroundViewHolder(
@@ -25,7 +34,30 @@ class BackgroundCustomizeAdapter(
 
         fun bind(item: BackgroundModel, position: Int) {
             binding.apply {
-                loadImageGlide(root, item.image, imvImage)
+
+                //quyen
+                when (item.image) {
+                    AssetsKey.NONE_LAYER -> {
+                        // Hiển thị button NONE
+                        btnNone.visible()
+                        btnRandom.gone()
+                        imvImage.gone()
+                    }
+                    AssetsKey.RANDOM_LAYER -> {
+                        // Hiển thị button RANDOM
+                        btnNone.gone()
+                        btnRandom.visible()
+                        imvImage.gone()
+                    }
+                    else -> {
+                        // Hiển thị ảnh bình thường
+                        btnNone.gone()
+                        btnRandom.gone()
+                        imvImage.visible()
+                        loadImageGlide(root, item.image, imvImage)
+                    }
+                }
+                //quyen
 
                 val (radius, res, margin) = if (item.isSelected) {
                     Triple(
@@ -53,10 +85,12 @@ class BackgroundCustomizeAdapter(
                 } else {
                     imvFocus.setImageDrawable(null)  // ← Xóa viền khi không chọn
                 }
+
+                // Set click listener riêng cho từng view (giống LayerCustomizeAdapter)
+                imvImage.setOnSingleClick { onItemClick.invoke(item.image, position) }
+                btnRandom.setOnSingleClick { onRandomClick.invoke() }
+                btnNone.setOnSingleClick { onNoneClick.invoke(position) }
                 //quyen
-                root.setOnSingleClick {
-                    onItemClick.invoke(item.image, position)
-                }
             }
         }
     }

@@ -22,7 +22,9 @@ import com.charactor.avatar.maker.pfp.databinding.ActivityBackgroundBinding
 import com.charactor.avatar.maker.pfp.activity_app.view.ViewActivity
 import com.charactor.avatar.maker.pfp.core.extensions.select
 import com.charactor.avatar.maker.pfp.core.extensions.setFont
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class BackgroundCustomizeActivity : BaseActivity<ActivityBackgroundBinding>() {
 
@@ -62,17 +64,73 @@ class BackgroundCustomizeActivity : BaseActivity<ActivityBackgroundBinding>() {
                 btnActionBarLeft.setOnSingleClick { handleBackLeftToRight() }
                 btnActionBarRightText.setOnSingleClick { handleSave() }
             }
-            backgroundCustomizeAdapter.onItemClick = { path, position ->
-                if (position != 0) {
-                    loadImageGlide(this@BackgroundCustomizeActivity, path, imvBackground, false)
-                } else {
-                    imvBackground.setImageBitmap(null)
-                }
-                viewModel.changeFocusBackgroundList(position)
+            //quyen
+            // Callback khi click NONE
+            backgroundCustomizeAdapter.onNoneClick = { position ->
+                handleNoneBackground(position)
             }
+
+            // Callback khi click RANDOM
+            backgroundCustomizeAdapter.onRandomClick = {
+                handleRandomBackground()
+            }
+
+            // Callback khi click ảnh bình thường
+            backgroundCustomizeAdapter.onItemClick = { path, position ->
+                lifecycleScope.launch(Dispatchers.IO) {
+                    withContext(Dispatchers.Main) {
+                        loadImageGlide(this@BackgroundCustomizeActivity, path, imvBackground, false)
+                    }
+
+                    // Cập nhật focus
+                    viewModel.changeFocusBackgroundList(position)
+
+                    // Submit list để cập nhật UI
+                    withContext(Dispatchers.Main) {
+                        backgroundCustomizeAdapter.submitList(viewModel.backgroundList.value.toList())
+                    }
+                }
+            }
+            //quyen
         }
 
     }
+
+    //quyen
+    private fun handleNoneBackground(position: Int) {
+        lifecycleScope.launch(Dispatchers.IO) {
+            // Xóa ảnh background
+            withContext(Dispatchers.Main) {
+                binding.imvBackground.setImageBitmap(null)
+            }
+
+            // Cập nhật focus
+            viewModel.changeFocusBackgroundList(position)
+
+            // Submit list để cập nhật UI
+            withContext(Dispatchers.Main) {
+                backgroundCustomizeAdapter.submitList(viewModel.backgroundList.value.toList())
+            }
+        }
+    }
+
+    private fun handleRandomBackground() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val pathRandom = viewModel.randomBackground()
+
+            withContext(Dispatchers.Main) {
+                loadImageGlide(
+                    this@BackgroundCustomizeActivity,
+                    pathRandom,
+                    binding.imvBackground,
+                    false
+                )
+                // Submit list để cập nhật UI
+                backgroundCustomizeAdapter.submitList(viewModel.backgroundList.value.toList())
+            }
+        }
+    }
+    //quyen
 
     override fun initActionBar() {
         binding.actionBar.apply {

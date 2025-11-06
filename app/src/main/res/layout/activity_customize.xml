@@ -158,6 +158,8 @@
         app:layout_constraintTop_toBottomOf="@+id/gl056" />
 
     <!--    rcvLayer-->
+
+    <!--    flBottomNav-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvLayer"
         android:layout_width="match_parent"
@@ -168,10 +170,11 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/flBottomNav"
         app:layout_constraintTop_toBottomOf="@+id/gl056"
+        app:layout_constraintVertical_bias="0.0"
         app:spanCount="5"
+        tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/item_customize" />
 
-    <!--    flBottomNav-->
     <FrameLayout
         android:id="@+id/flBottomNav"
         android:layout_width="match_parent"
