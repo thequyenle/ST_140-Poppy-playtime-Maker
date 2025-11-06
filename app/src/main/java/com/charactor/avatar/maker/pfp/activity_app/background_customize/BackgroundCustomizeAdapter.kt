@@ -47,8 +47,13 @@ class BackgroundCustomizeAdapter(
                     cvImage.layoutParams = this
                 }
 
-                loadImageGlide(root, res, imvFocus)
-
+                //quyen
+                if (item.isSelected) {
+                    loadImageGlide(root, R.drawable.img_background_focus, imvFocus)
+                } else {
+                    imvFocus.setImageDrawable(null)  // ← Xóa viền khi không chọn
+                }
+                //quyen
                 root.setOnSingleClick {
                     onItemClick.invoke(item.image, position)
                 }
