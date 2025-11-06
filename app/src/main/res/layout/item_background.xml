@@ -31,7 +31,7 @@
             android:id="@+id/cvImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="2dp"
+            android:layout_margin="1dp"
             app:cardBackgroundColor="@color/transparent"
             app:cardCornerRadius="9dp"
             app:cardElevation="0dp">

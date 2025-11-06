@@ -59,17 +59,18 @@ class BackgroundCustomizeAdapter(
                 }
                 //quyen
 
+                //quyen
                 val (radius, res, margin) = if (item.isSelected) {
                     Triple(
-                        UnitHelper.pxToDpInt(context, 6).toFloat(),
+                        UnitHelper.pxToDpInt(context, 8).toFloat(), // 10dp (viền ngoài) - 1dp (margin) = 9dp
                         R.drawable.img_background_focus,
-                        UnitHelper.pxToDpInt(context, 4)
+                        UnitHelper.pxToDpInt(context, 2)
                     )
                 } else {
                     Triple(
-                        UnitHelper.pxToDpInt(context, 8).toFloat(),
+                        UnitHelper.pxToDpInt(context, 10).toFloat(), // Bằng với viền ngoài để khớp góc
                         android.R.color.transparent,
-                        UnitHelper.pxToDpInt(context, 2)
+                        UnitHelper.pxToDpInt(context, 0)
                     )
                 }
 
@@ -78,6 +79,7 @@ class BackgroundCustomizeAdapter(
                     setMargins(margin, margin, margin, margin)
                     cvImage.layoutParams = this
                 }
+                //quyen
 
                 //quyen
                 if (item.isSelected) {

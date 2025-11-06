@@ -56,8 +56,8 @@ class BackgroundCustomizeViewModel : ViewModel() {
         )
 
         // 4. Chọn ảnh đầu tiên từ assets (index 2, vì 0 là NONE, 1 là RANDOM)
-        if (list.size > 2) {
-            list[2] = list[2].copy(isSelected = true)
+        if (list.size > 0) {
+            list[0] = list[0].copy(isSelected = true)
         }
 
         _backgroundList.value = list
