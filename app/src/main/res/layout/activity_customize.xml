@@ -166,7 +166,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layerType="hardware"
-        android:paddingHorizontal="9.5dp"
+        android:paddingHorizontal="16dp"
         android:paddingTop="16dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/flBottomNav"
@@ -191,7 +191,7 @@
             android:layout_gravity="center_vertical"
             android:layerType="hardware"
             android:orientation="horizontal"
-            android:paddingStart="16dp"
+            android:paddingStart="20dp"
             android:paddingTop="2dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_bottom_navigation" />
