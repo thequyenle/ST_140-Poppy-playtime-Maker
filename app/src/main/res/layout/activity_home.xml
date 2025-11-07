@@ -87,8 +87,16 @@
                         android:text="@string/character_maker"
                         android:textColor="@color/white"
                         android:textSize="48sp"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="20sp"
+                        android:autoSizeMaxTextSize="48sp"
+                        android:autoSizeStepGranularity="2sp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
                         app:outerStrokeColor="#E906FF"
                         app:outerStrokeWidth="1dp"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
                         />
                 </LinearLayout>
             </FrameLayout>
@@ -125,8 +133,16 @@
                         android:text="@string/my_creation"
                         android:textColor="@color/white"
                         android:textSize="48sp"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="20sp"
+                        android:autoSizeMaxTextSize="48sp"
+                        android:autoSizeStepGranularity="2sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
                         app:outerStrokeColor="#29BAAB"
                         app:outerStrokeWidth="1dp"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
                          />
                 </LinearLayout>
             </FrameLayout>

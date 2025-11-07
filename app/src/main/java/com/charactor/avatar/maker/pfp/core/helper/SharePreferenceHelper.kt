@@ -40,6 +40,16 @@ class SharePreferenceHelper(val context: Context) {
         editor.apply()
     }
 
+    //quyen
+    fun getShouldShowRate(): Boolean {
+        return preferences.getBoolean("should_show_rate", false)
+    }
+
+    fun setShouldShowRate(value: Boolean) {
+        preferences.edit().putBoolean("should_show_rate", value).apply()
+    }
+    //quyen
+
     // Permission
     fun getIsFirstPermission(): Boolean {
         return preferences.getBoolean(FIRST_PERMISSION_KEY, true)
@@ -66,7 +76,7 @@ class SharePreferenceHelper(val context: Context) {
     fun setCountBack(countBack: Int) {
         val editor = preferences.edit()
         editor.putInt(COUNT_BACK_KEY, countBack)
-        editor.apply()
+        editor.apply() // ✅ Hoặc dùng commit() để đảm bảo lưu ngay
     }
 
     fun getCountBack(): Int {

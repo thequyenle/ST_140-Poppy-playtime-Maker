@@ -51,7 +51,7 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
     private val selectList by lazy {
         arrayListOf(
             binding.actionBar.btnActionBarRight,
-            binding.actionBar.btnActionBarNextToRight,
+          //  binding.actionBar.btnActionBarNextToRight,
             binding.layoutBottom,
         )
     }
@@ -149,7 +149,7 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
 //        isLastItem
         lifecycleScope.launch {
             viewModel.isLastItem.collect { selectStatus ->
-                changeImageActionBarRight(selectStatus)
+              //  changeImageActionBarRight(selectStatus)
             }
         }
     }
@@ -170,8 +170,8 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
                     }
                 }
 
-                btnActionBarRight.setOnSingleClick { handleSelectAll() }
-                btnActionBarNextToRight.setOnSingleClick { confirmDeleteItem() }
+               // btnActionBarRight.setOnSingleClick { handleSelectAll() }
+                btnActionBarRight.setOnSingleClick { confirmDeleteItem() }
             }
 
             bottomBar.apply {
@@ -228,8 +228,8 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
             tvCenter.visible()
             tvCenter.textSize = 32f
             tvCenter.setFont(R.font.creepstercaps_regular)
-            btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
-            btnActionBarNextToRight.setImageResource(R.drawable.ic_delete_red)
+         //   btnActionBarRight.setImageResource(R.drawable.ic_not_select_all)
+            btnActionBarRight.setImageResource(R.drawable.ic_delete_red)
         }
 
         binding.bottomBar.apply {
@@ -285,12 +285,14 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
     private fun handleLongClick(position: Int) {
         viewModel.showLongClick(position)
         handleSelectList(false)
+        binding.actionBar.btnActionBarLeft.setImageResource(R.drawable.ic_close)
     }
 
     private fun resetData() {
         viewModel.loadAlbum(this@MyCreationActivity)
         handleSelectList(true)
-        changeImageActionBarRight(true)
+        //changeImageActionBarRight(true)
+        binding.actionBar.btnActionBarLeft.setImageResource(R.drawable.ic_back)
     }
 
     private fun changeImageActionBarRight(isReset: Boolean) {
@@ -383,6 +385,18 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
     }
 
     private fun confirmDeleteItem(onlyPath: String = "") {
+        // Quyen THÊM ĐOẠN NÀY: Kiểm tra trước khi show dialog
+        if (onlyPath == "") {
+            // Kiểm tra xem có item nào được chọn không
+            val hasSelected = viewModel.albumList.value.any { it.isSelected }
+            if (!hasSelected) {
+                // Hiện toast ngay và return (không show dialog)
+                showToast(R.string.please_select_an_image)
+                return
+            }
+        }
+        //quyen
+
         val dialog =
             YesNoDialog(this, R.string.delete_your_customize, R.string.are_you_sure_you_want_to_delete_the_image)
         dialog.show()

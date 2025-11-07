@@ -77,39 +77,63 @@ class MainActivity : BaseActivity<ActivityHomeBinding>() {
 
     @SuppressLint("MissingSuperCall", "GestureBackNavigation")
     override fun onBackPressed() {
-        Log.d("MainActivity", "getIsRate: ${sharePreference.getIsRate(this)}")
-        Log.d("MainActivity", "getCountBack: ${sharePreference.getCountBack()}")
-        Log.d("MainActivity", "check % 2: ${sharePreference.getCountBack() % 2}")
+        Log.d("MainActivity", "onBackPressed called")
 
-        sharePreference.setCountBack(sharePreference.getCountBack() + 1)
+        if (!sharePreference.getIsRate(this)) {
+            // ✅ Lấy counter hiện tại
+            val currentCount = sharePreference.getCountBack()
+            Log.d("MainActivity", "Current count BEFORE increment: $currentCount")
 
-        if (!sharePreference.getIsRate(this) && sharePreference.getCountBack() % 2 == 0) {
-            Log.d("MainActivity", "Vào show rate dialog")
-            rateApp(sharePreference) { state ->
-                when (state) {
-                    RateState.LESS3 -> {
-                        lifecycleScope.launch(Dispatchers.Main) {
-                            delay(1000)
-                            exitProcess(0)
+            // ✅ Tăng counter và LƯU NGAY
+            val newCount = currentCount + 1
+            sharePreference.setCountBack(newCount)
+
+            // ✅ Verify đã lưu thành công
+            val verifyCount = sharePreference.getCountBack()
+            Log.d("MainActivity", "Count AFTER save: $verifyCount")
+            Log.d("MainActivity", "getIsRate: ${sharePreference.getIsRate(this)}")
+            Log.d("MainActivity", "check % 2: ${newCount % 2}")
+
+            if (newCount % 2 == 0) {
+                // Lần chẵn - hiện dialog
+                Log.d("MainActivity", "Even count ($newCount) - Showing rate dialog")
+                rateApp(sharePreference) { state ->
+                    Log.d("MainActivity", "Rate callback: $state")
+
+                    when (state) {
+                        RateState.LESS3 -> {
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                delay(500)
+                                finishAffinity() // ✅ Dùng finishAffinity() thay vì exitProcess(0)
+                            }
                         }
-                    }
 
-                    RateState.GREATER3 -> {}
-                    RateState.CANCEL -> {
-                        lifecycleScope.launch {
-                            withContext(Dispatchers.Main) {
-                                delay(1000)
-                                exitProcess(0)
+                        RateState.GREATER3 -> {
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                delay(500)
+                                finishAffinity()
+                            }
+                        }
+
+                        RateState.CANCEL -> {
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                delay(500)
+                                finishAffinity()
                             }
                         }
                     }
                 }
+            } else {
+                // Lần lẻ - thoát luôn
+                Log.d("MainActivity", "Odd count ($newCount) - exit without dialog")
+                finishAffinity() // ✅ Dùng finishAffinity() thay vì exitProcess(0)
             }
         } else {
-            exitProcess(0)
+            // Đã rate rồi thì thoát luôn
+            Log.d("MainActivity", "Already rated - exit")
+            finishAffinity() // ✅ Dùng finishAffinity() thay vì exitProcess(0)
         }
     }
-
     private fun deleteTempFolder() {
         lifecycleScope.launch(Dispatchers.IO) {
             val dataTemp = MediaHelper.getImageInternal(this@MainActivity, ValueKey.DOWNLOAD_ALBUM_BACKGROUND)

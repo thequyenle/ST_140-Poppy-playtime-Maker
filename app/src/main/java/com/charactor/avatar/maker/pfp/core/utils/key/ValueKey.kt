@@ -1,7 +1,7 @@
 package com.charactor.avatar.maker.pfp.core.utils.key
 
 object ValueKey {
-    const val DOWNLOAD_ALBUM = "Character Maker"
+    const val DOWNLOAD_ALBUM = "Poppy Playtime Maker"
     const val DOWNLOAD_ALBUM_BACKGROUND = "Image Background"
     const val RANDOM_QUANTITY = 10
     const val WIDTH_HEIGHT_BITMAP = 512
