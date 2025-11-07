@@ -175,7 +175,7 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
             }
 
             bottomBar.apply {
-                btnBottomLeft.setOnSingleClick { viewModel.shareFiles(this@MyCreationActivity) }
+                btnBottomLeft.setOnSingleClick(2000) { viewModel.shareFiles(this@MyCreationActivity) }
                 btnBottomRight.setOnSingleClick { handleBottomRight() }
             }
 
@@ -189,7 +189,7 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
                         ) != null -> false
 
                         else -> {
-                            resetData()
+                           // resetData()
                             true
                         }
                     }

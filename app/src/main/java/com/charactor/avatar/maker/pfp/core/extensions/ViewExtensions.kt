@@ -75,7 +75,7 @@ fun Activity.hideNavigation(isBlack: Boolean = false) {
 // ----------------------------
 // Click utils
 // ----------------------------
-fun View.setOnSingleClick(interval: Long = 500, action: (View) -> Unit) {
+fun View.setOnSingleClick(interval: Long = 300, action: (View) -> Unit) {
     setOnClickListener {
         if (System.currentTimeMillis() - DataLocal.lastClickTime >= interval) {
             action(it)

@@ -85,7 +85,7 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
 
             }
             bottomBar.apply {
-                btnBottomLeft.setOnSingleClick { handleBottomBarLeft() }
+                btnBottomLeft.setOnSingleClick(2000) { handleBottomBarLeft() }
                 btnBottomRight.setOnSingleClick { handleBottomBarRight() }
             }
         }
