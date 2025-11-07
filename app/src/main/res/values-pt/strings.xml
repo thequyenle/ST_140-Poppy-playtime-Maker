@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">Character Avatar Creator</string>
-    <string name="go_to_setting_message">O aplicativo precisa desta permissão</string>
+    <string name="app_name">Poppy playtime maker</string>
+    <string name="go_to_setting_message">O aplicativo precisa dessa permissão</string>
     <string name="settings">Configurações</string>
     <string name="this_action_can_contain_ads">Esta ação pode conter anúncios</string>
     <string name="not_select_lang">Por favor, selecione um idioma</string>
     <string name="next">Próximo</string>
     <string name="language">Idioma</string>
 
-    <string name="title_1">Crie seu próprio avatar como quiser</string>
-    <string name="title_2">Variedade de categorias únicas</string>
-    <string name="title_3">Estilos de personagens diversos</string>
+    <string name="title_1">CRIE SEU PRÓPRIO AVATAR COMO QUISER</string>
+    <string name="title_2">CATEGORIAS ÚNICAS DIVERSAS</string>
+    <string name="title_3">GRANDE VARIEDADE DE ITENS</string>
 
     <string name="permission">Permissão</string>
     <string name="storage">Armazenamento</string>
@@ -18,12 +18,12 @@
     <string name="granted_notification">Permissão de notificação concedida</string>
     <string name="granted_storage">Permissão de armazenamento concedida</string>
     <string name="allow">Permitir</string>
-    <string name="to_access">para acessar fotos no seu dispositivo</string>
+    <string name="to_access">para acessar fotos, mídia e arquivos no seu dispositivo</string>
     <string name="to_access_13">para acessar notificações no seu dispositivo</string>
 
     <string name="rate_us">Avalie-nos</string>
-    <string name="share_app">Compartilhar aplicativo</string>
-    <string name="privacy_policy"><![CDATA[Privacidade e Política]]></string>
+    <string name="share_app">Compartilhar App</string>
+    <string name="privacy_policy"><![CDATA[Privacidade & Política]]></string>
 
     <string name="zero_star_title">Você gosta do aplicativo?</string>
     <string name="zero_star">Eu preciso do seu amor</string>
@@ -34,8 +34,8 @@
     <string name="two_star_title">Estou um pouco triste</string>
     <string name="two_star">Não vou comer arroz hoje</string>
 
-    <string name="three_star_title">Bom trabalho, amiguinho</string>
-    <string name="three_star">Eu sabia que você não me deixaria triste</string>
+    <string name="three_star_title">Ótimo trabalho amiguinho</string>
+    <string name="three_star">Eu sei que você não vai me deixar triste</string>
 
     <string name="four_star_title">Você é tão bonito</string>
     <string name="four_star">O príncipe é tão bonito</string>
@@ -45,36 +45,37 @@
 
     <string name="rate_us_0">Você ainda não avaliou!</string>
     <string name="rate">Avaliar</string>
-    <string name="exit">Sair</string>
+    <string name="exit">Sair da personalização</string>
     <string name="have_rated">Obrigado por avaliar nosso aplicativo</string>
     <string name="share">Compartilhar</string>
-    <string name="delete">Excluir</string>
+    <string name="delete">Excluir sua personalização</string>
     <string name="download">Baixar</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
-    <string name="wait_a_minute">Espere um momento...</string>
-    <string name="reset">Redefinir</string>
-    <string name="download_success">Download concluído com sucesso no álbum Character Maker</string>
-    <string name="please_check_your_internet">Por favor, verifique sua internet</string>
+    <string name="wait_a_minute">Aguarde alguns segundos...</string>
+    <string name="reset">Redefinir sua personalização</string>
+    <string name="download_success">Download bem-sucedido no álbum Character Maker</string>
+    <string name="please_check_your_internet">Por favor, verifique sua conexão com a internet</string>
     <string name="please_select_an_image">Por favor, selecione uma imagem</string>
     <string name="error">Erro</string>
-    <string name="an_error_occurred">Ocorreu um erro, tente novamente mais tarde.</string>
-    <string name="image_has_been_saved_successfully">Imagem salva com sucesso!</string>
+    <string name="an_error_occurred">Ocorreu um erro, por favor tente novamente mais tarde.</string>
+    <string name="image_has_been_saved_successfully">Você criou um personagem com sucesso</string>
     <string name="save">Salvar</string>
-    <string name="are_you_sure_want_to_delete_this_item">Tem certeza de que deseja excluir este item?</string>
+    <string name="are_you_sure_want_to_delete_this_item">Tem certeza de que deseja excluir esta imagem?</string>
     <string name="downloading">Baixando...</string>
     <string name="successfully">Com sucesso</string>
-    <string name="download_failed_please_try_again_later">Falha no download, tente novamente mais tarde!</string>
-    <string name="save_failed_please_try_again">Falha ao salvar, tente novamente!</string>
-    <string name="delete_failed_please_try_again">Falha ao excluir, tente novamente!</string>
-    <string name="my_creation">Minha Criação</string>
+    <string name="download_failed_please_try_again_later">Falha no download, por favor tente novamente mais tarde!</string>
+    <string name="save_failed_please_try_again">Falha ao salvar, por favor tente novamente!</string>
+    <string name="delete_failed_please_try_again">Falha ao excluir, por favor tente novamente!</string>
+    <string name="my_creation">Criação</string>
     <string name="delete_your_customize">Excluir sua personalização</string>
     <string name="are_you_sure_you_want_to_delete_the_image">Tem certeza de que deseja excluir a imagem?</string>
     <string name="haven_t_saved_it_yet_do_you_want_to_exit">Ainda não salvou, deseja sair?</string>
-    <string name="change_your_whole_design_are_you_sure">Deseja redefinir tudo?</string>
-    <string name="character_maker">Criador de Personagens</string>
-    <string name="no_item_here">Nenhum item aqui</string>
-    <string name="category_choose_character">Category</string>
-    <string name="title_view">CHARACTER</string>
-    <string name="go_to_settings">Go to settings</string>
+    <string name="change_your_whole_design_are_you_sure">Mudar todo o seu design, tem certeza?</string>
+    <string name="character_maker">Criar Personagem</string>
+    <string name="no_item_here">Você não tem nenhum personagem</string>
+    <string name="category_choose_character">Categoria</string>
+    <string name="title_view">PERSONAGEM</string>
+    <string name="go_to_settings">Ir para configurações</string>
+    <string name="exit_rating">Sair</string>
 </resources>

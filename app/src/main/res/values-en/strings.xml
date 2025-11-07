@@ -77,4 +77,5 @@
     <string name="category_choose_character">Category</string>
     <string name="title_view">CHARACTER</string>
     <string name="go_to_settings">Go to settings</string>
+    <string name="exit_rating">Exit</string>
 </resources>

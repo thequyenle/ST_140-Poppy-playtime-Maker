@@ -28,7 +28,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="4dp"
         android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,6 +82,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:visibility="invisible"
                         android:layout_gravity="start|center_vertical"
                         android:src="@drawable/ic_more_set" />
                 </FrameLayout>
@@ -93,7 +94,7 @@
                 android:id="@+id/btnRate"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/bg_100_stroke_white"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -132,6 +133,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:visibility="invisible"
+
                         android:layout_gravity="start|center_vertical"
                         android:src="@drawable/ic_more_set" />
                 </FrameLayout>
@@ -142,7 +145,7 @@
                 android:id="@+id/btnShare"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/bg_100_stroke_white"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -180,6 +183,8 @@
 
                     <ImageView
                         android:layout_width="24dp"
+                        android:visibility="invisible"
+
                         android:layout_height="24dp"
                         android:layout_gravity="start|center_vertical"
                         android:src="@drawable/ic_more_set" />
@@ -191,7 +196,7 @@
                 android:id="@+id/btnPolicy"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/bg_100_stroke_white"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -230,6 +235,8 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:visibility="invisible"
+
                         android:layout_gravity="start|center_vertical"
                         android:src="@drawable/ic_more_set" />
                 </FrameLayout>

@@ -37,6 +37,7 @@ import com.charactor.avatar.maker.pfp.core.extensions.startIntentRightToLeft
 import com.charactor.avatar.maker.pfp.core.extensions.strings
 import com.charactor.avatar.maker.pfp.core.helper.UnitHelper
 import com.charactor.avatar.maker.pfp.activity_app.permission.PermissionViewModel
+import com.charactor.avatar.maker.pfp.core.extensions.invisible
 import com.charactor.avatar.maker.pfp.core.extensions.setFont
 import kotlinx.coroutines.launch
 
@@ -125,9 +126,8 @@ class ViewActivity : BaseActivity<ActivityViewBinding>() {
                 tvCenter.visible()
             }
 
-            tvSuccess.gone()
+            tvSuccess.invisible()
             (layoutBottom.layoutParams as FrameLayout.LayoutParams).apply {
-                gravity = Gravity.BOTTOM
                 setMargins(0, 0, 0, UnitHelper.pxToDpInt(this@ViewActivity, 24))
             }
             layoutBottom.requestLayout()
