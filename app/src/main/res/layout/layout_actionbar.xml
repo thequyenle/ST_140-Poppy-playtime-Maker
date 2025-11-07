@@ -104,7 +104,7 @@
         android:id="@+id/btnActionBarRightText"
         android:layout_width="70dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/img_btn_custom_next"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/btnActionBarRight"
