@@ -164,7 +164,8 @@ class MyCreationActivity : BaseActivity<ActivityAlbumBinding>() {
                         if (viewModel.isFromSuccess.value) {
                             startIntentWithClearTop(MainActivity::class.java)
                         } else {
-                            handleBackLeftToRight()
+                            startIntentWithClearTop(MainActivity::class.java)
+                          //quyen  handleBackLeftToRight() //quyen
                         }
                     }
                 }

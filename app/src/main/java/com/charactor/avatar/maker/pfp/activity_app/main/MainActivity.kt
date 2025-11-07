@@ -1,6 +1,7 @@
 package com.charactor.avatar.maker.pfp.activity_app.main
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import androidx.lifecycle.lifecycleScope
@@ -76,7 +77,14 @@ class MainActivity : BaseActivity<ActivityHomeBinding>() {
 
     @SuppressLint("MissingSuperCall", "GestureBackNavigation")
     override fun onBackPressed() {
+        Log.d("MainActivity", "getIsRate: ${sharePreference.getIsRate(this)}")
+        Log.d("MainActivity", "getCountBack: ${sharePreference.getCountBack()}")
+        Log.d("MainActivity", "check % 2: ${sharePreference.getCountBack() % 2}")
+
+        sharePreference.setCountBack(sharePreference.getCountBack() + 1)
+
         if (!sharePreference.getIsRate(this) && sharePreference.getCountBack() % 2 == 0) {
+            Log.d("MainActivity", "Vào show rate dialog")
             rateApp(sharePreference) { state ->
                 when (state) {
                     RateState.LESS3 -> {
@@ -89,7 +97,6 @@ class MainActivity : BaseActivity<ActivityHomeBinding>() {
                     RateState.GREATER3 -> {}
                     RateState.CANCEL -> {
                         lifecycleScope.launch {
-                            sharePreference.setCountBack(sharePreference.getCountBack() + 1)
                             withContext(Dispatchers.Main) {
                                 delay(1000)
                                 exitProcess(0)

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_bg_app" />
+        android:src="@drawable/img_bg_cus" />
 
     <!-- layoutActionBar -->
     <FrameLayout
@@ -59,20 +59,21 @@
         android:id="@+id/btnReset"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="10dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_reset"
         app:layout_constraintEnd_toEndOf="@id/imgReset"
         app:layout_constraintStart_toStartOf="@id/imgReset"
-        app:layout_constraintTop_toTopOf="@+id/imgReset" />
+        app:layout_constraintTop_toTopOf="@+id/imgReset"
+        app:layout_constraintBottom_toTopOf="@id/btnFlip"
+        />
     <!--    btnFlip-->
     <ImageView
         android:id="@+id/btnFlip"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginBottom="10dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_flip"
+        app:layout_constraintTop_toBottomOf="@id/btnReset"
         app:layout_constraintBottom_toBottomOf="@id/imgReset"
         app:layout_constraintEnd_toEndOf="@id/imgReset"
         app:layout_constraintStart_toStartOf="@id/imgReset" />
